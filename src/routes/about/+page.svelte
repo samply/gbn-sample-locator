@@ -1,0 +1,93 @@
+<h1>About Us</h1>
+
+<p>
+    The German Biobank Node is the umbrella organisation for biobanks in Germany. Under GBN’s leadership, 35 biobank
+    sites and one IT development centre work together to make biosamples available for national and international
+    biomedical research. GBN is funded by the Federal Ministry of Education and Research (BMBF) and represents the
+    interests of German biobanks in the European infrastructure BBMRI-ERIC (Biobanking and Biomolecular Resources
+    Research Infrastructure - European Research Infrastructure Consortium).
+</p>
+
+<div class="logos">
+    <img src="GBN_logo.svg" alt="gbn logo">
+    <img src="BBMRI-ERIC-gateway-for-health.svg" alt="bbmri-eric logo">
+    <img src="BMBF_logo.svg#svgView(viewBox(295, 350, 1, 130))" alt="sponsored by the federal ministry of research logo">
+</div>
+
+<h2>Step 1: Find relevant biosamples with the Sample Locator</h2>
+<p>
+    The Sample Locator enables scientists to search for specific research-relevant biosamples and related data across
+    multiple academic biobanks, mostly based in Germany. The online search-tool was developed by an interdisciplinary team
+    of developers from the German Biobank Alliance (GBA) located at several sites within Germany, based on previous work
+    within the German Cancer Research Center (DKFZ) and the BBMRI-ERIC Common Service IT.
+</p>
+<p>
+    The first stage of finding biosamples and data consists of a feasibility search. The search result shows how many
+    desired samples in total are available in the biobanks connected to the Sample Locator. After logging in via the
+    authentication service BBMRI-ERIC AAI, users will then see in which locations how many samples are available. In order
+    to comply with data protection requirements, the search results (numbers of potentially available samples and numbers of
+    donors) are slightly obfuscated (i.e. plus or minus one to ten, the scale being randomly generated for each search
+    request).
+</p>
+<p>
+    To register with BBMRI-ERIC AAI, you can use your institutional email and account-password in case you are based with an
+    institution listed in the Deutsches Forschungsnetz (DFN). If this does not apply, you will need to register using the
+    LifeScience Hostel (green button). In both cases your registration-application will be verified by GBN within a working
+    day.
+</p>
+<p>
+    If you have any questions about the Sample Locator or would like to give feedback, please contact
+    feedback@germanbiobanknode.de.
+</p>
+
+<h2>Step 2: Request biospecimens using the Negotiator</h2>
+
+<p>
+    To request samples, users are automatically referred from the Sample Locator to the Negotiator, a platform for
+    structured communication between inquirers and biobanks originally developed at the German Cancer Research Center (DKFZ)
+    and the BBMRI-ERIC Common Service IT. If you have questions regarding the Negotiator, please contact
+    negotiator@helpdesk.bbmri-eric.eu.
+</p>
+
+<h2>Further information</h2>
+
+<ul>
+    <li><a href="https://www.bbmri.de/">GBN website</a></li>
+    <li><a href="http://www.bbmri-eric.eu/">BBMRI-ERIC website</a></li>
+    <li><a href="https://www.bbmri.de/service/directory/directory-anleitung/?L=1">How to register to BBMRI-ERIC services</a></li>
+</ul>
+
+<style>
+    * {
+    padding: 3rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 1rem;
+}
+
+.logos {
+    display: grid;
+    grid-template-columns: 33% 33% 20%;
+    grid-gap: 7%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem auto;
+    max-width: 600px;
+}
+
+ img {
+    width: 100%;
+}
+
+p {
+    text-align: justify;
+}
+</style>
