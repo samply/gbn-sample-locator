@@ -5,10 +5,25 @@
         "addIconUrl": "long-right-arrow-svgrepo-com.svg"
     },
     "siteMappings": {
-        "lodz-test": "Łódź-test",
-        "uppsala-test": "Uppsala-Test",
-        "eric-test": "ERIC-Test",
-        "prague-uhkt-test": "Prague-UHKT-Test"
+        "aachen": "Aachen",
+        "augsburg": "Augsburg",
+        "berlin": "Berlin",
+        "bonn-test": "Bonn",
+        "dresden": "Dresden",
+        "essen": "Essen",
+        "frankfurt": "Frankfurt",
+        "freiburg": "Freiburg",
+        "freiburg-test": "Freiburg-Test",
+        "goettingen": "Göttingen",
+        "heidelberg": "Heidelberg",
+        "hannover": "Hannover",
+        "luebeck": "Lübeck",
+        "mannheim": "Mannheim",
+        "mainz": "Mainz",
+        "muenster": "Münster",
+        "marburg": "Marburg",
+        "regensburg": "Regensburg",
+        "wuerzburg": "Würzburg"
     },
     "catalogueKeyToResponseKeyMap": [
         [

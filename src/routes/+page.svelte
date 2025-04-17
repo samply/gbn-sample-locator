@@ -41,8 +41,15 @@
 		const { ast, updateResponse, abortController } = event.detail;
 		const criteria: string[] = dataPasser.getCriteriaAPI('diagnosis');
 
-		requestBackend(ast, updateResponse, abortController, measures, criteria);
+		requestBackend(ast, updateResponse, abortController);
 	});
+
+    let chartColors: string[] = [
+      '#6F8795',
+      '#8C9FAA',
+      '#A9B7BF',
+      '#C5CFD5',
+  ]
 
 	let color: string = '#e95713';
 	let unit: string = 'px';
@@ -132,6 +139,7 @@
 					title="Gender Distribution"
 					catalogueGroupCode="gender"
 					chartType="pie"
+                    backgroundColor={chartColors}
 					displayLegends={true}
 				></lens-chart>
 			</div>
@@ -141,6 +149,7 @@
 					title="Age Distribution"
 					catalogueGroupCode="age_at_diagnosis"
 					chartType="bar"
+                    backgroundColor={chartColors}
 					groupRange={10}
 					filterRegex="^(1*[12]*[0-9])"
 				></lens-chart>
@@ -156,6 +165,7 @@
 					title="Diagnosis"
 					catalogueGroupCode="diagnosis"
 					chartType="bar"
+                    backgroundColor={chartColors}
 					groupingDivider="."
 					groupingLabel=".%"
 				></lens-chart>
