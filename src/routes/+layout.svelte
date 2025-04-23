@@ -24,19 +24,11 @@
     src: url(/fonts/Titillium/Titillium-Bold.otf);
   }
  
- 
-  body {
-    margin: 0;
-  }
- 
+
   * {
     font-family: 'Titillium', sans-serif;
     border-radius: 0;
-  }
- 
-  
-  th {
-    font-family: 'Titillium Bold', sans-serif;
+    margin: 0;
   }
  
   /* Selects the app root */
@@ -106,24 +98,6 @@
     color: var(--color-gray);
     cursor: pointer;
   }
- 
-  ::ng-deep .p-card {
-    box-shadow: none !important;
-  }
- 
-  :host ::ng-deep .p-inputgroup button,
-  :host ::ng-deep p-autocomplete span .p-autocomplete-multiple-container{
-     border-radius: 0px !important;
-  }
- 
-  ::ng-deep lens-result-renderer-grid {
-    grid-auto-rows: auto 500px 500px !important;
-  }
- 
-  ::ng-deep .results-summery-bar-heading {
-     font-size: 24px!important;
-  }
- 
  
   .container {
     margin: 0 auto;

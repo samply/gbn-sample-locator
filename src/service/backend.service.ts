@@ -1,11 +1,14 @@
-import { type AstTopLayer, type Site } from "@samply/lens";
+import { resolveAstSubCategories, type AstTopLayer, type Site } from "@samply/lens";
 import { v4 as uuidv4 } from "uuid";
 import { Spot } from "./spot";
 
 export const requestBackend = (ast: AstTopLayer, updateResponse: (response: Map<string, Site>) => void, abortController: AbortController) => {
 
     const queryId = uuidv4();
-    const query = { lang: "ast", payload: btoa(decodeURI(JSON.stringify({ast: ast, id: queryId.concat("__search__").concat(queryId) }))) };
+
+    const newAst = resolveAstSubCategories(ast)
+
+    const query = { lang: "ast", payload: btoa(decodeURI(JSON.stringify({ast: newAst, id: queryId.concat("__search__").concat(queryId) }))) };
 
     const siteList: string[] =         [
         'aachen',
@@ -14,6 +17,8 @@ export const requestBackend = (ast: AstTopLayer, updateResponse: (response: Map<
         'bonn-test',
         'dresden',
         'essen',
+        'erlangen',
+        'muenchen-mpi-test',
         'frankfurt',
         'freiburg',
         'freiburg-test',
