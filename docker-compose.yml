@@ -46,9 +46,9 @@ services:
      --pass-access-token=true
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.oauth2_proxy.rule=Host(`${GUI_HOST}`) && PathPrefix(`/_oauth`)"
-      - "traefik.http.services.oauth2_proxy.loadbalancer.server.port=4180"
-      - "traefik.http.routers.oauth2_proxy.tls=true"
+      - "traefik.http.routers.traefik-forward-auth.rule=Host(`${GUI_HOST}`) && PathPrefix(`/_oauth`)"
+      - "traefik.http.services.traefik-forward-auth.loadbalancer.server.port=4180"
+      - "traefik.http.routers.traefik-forward-auth.tls=true"
     restart: unless-stopped
     environment:
       - http_proxy=${http_proxy}
