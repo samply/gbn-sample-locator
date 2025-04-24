@@ -61,7 +61,6 @@
 
 <main>
   <div class="banner">
-    <div class="banner">
       <div class="banner-image">
         <img src="gba-banner.png" alt="German Biobank Node" />
       </div>
@@ -197,7 +196,6 @@
     <error-toasts></error-toasts>
 
     <lens-data-passer bind:this={dataPasser}></lens-data-passer>
-  </div>
 </main>
 
 <style>
@@ -233,10 +231,6 @@
     font-family: SourceSansPro;
     src: url(/static/fonts/Source_Sans_Pro);
   }
-
-  /**
-    * Demo
-    */
 
   * {
     box-sizing: border-box;
@@ -289,9 +283,7 @@
   }
 
   .banner {
-    margin: auto;
     max-width: fit-content;
-    padding: var(--gap-l);
   }
 
   .banner h1 {

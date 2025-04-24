@@ -1,5 +1,5 @@
 <style>
-::ng-deep :root {
+* {
     --color-gray: #3C3C3D;
     --color-orange: #E95713;
     --color-blue: #304757;
