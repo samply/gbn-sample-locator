@@ -1,6 +1,8 @@
-# sv
+# GBN Sample Locator
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The sample locator is a graphical user interface for searching bio samples.
+
+Build on samply/lens and svelte.
 
 ## Creating a project
 
