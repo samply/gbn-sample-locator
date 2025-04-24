@@ -26,6 +26,7 @@ services:
       - OAUTH2_PROXY_COOKIE_SECRET=${AUTHENTICATION_SECRET}
       - OAUTH2_PROXY_COOKIE_DOMAINS=${GUI_HOST}
       - OAUTH2_PROXY_COOKIE_REFRESH=4m
+      - OAUTH2_PROXY_REDIRECT_URL=https://${GUI_HOST}/_oauth/callback
       - OAUTH2_PROXY_COOKIE_EXPIRE=24h
       - OAUTH2_PROXY_HTTP_ADDRESS=:4180
       - OAUTH2_PROXY_REVERSE_PROXY=true
@@ -41,7 +42,7 @@ services:
       - "traefik.http.middlewares.traefik-forward-auth.forwardauth.address=http://traefik-forward-auth:4180"
       - "traefik.http.middlewares.traefik-forward-auth.forwardauth.authResponseHeaders=Authorization, X-Forwarded-User, X-Auth-Request-User, X-Auth-Request-Email"
       - "traefik.http.services.traefik-forward-auth.loadbalancer.server.port=4180"
-      - "traefik.http.routers.traefik-forward-auth.rule=Host(`${GUI_HOST}`) && PathPrefix(`/oauth2/`)"
+      - "traefik.http.routers.traefik-forward-auth.rule=Host(`${GUI_HOST}`) && PathPrefix(`/_oauth2/`)"
       - "traefik.http.routers.traefik-forward-auth.tls=true"
 
 
