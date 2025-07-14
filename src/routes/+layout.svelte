@@ -186,7 +186,7 @@
 
 <header>
 <div class="container">
-    <a href="/"><img src="GBN_logo.svg" alt="German Biobank Node"/></a>
+    <a href="/"><img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" alt="German Biobank Node"/></a>
     <menu class="menu">
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
@@ -201,6 +201,6 @@
       <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
       <div> Made with ♥ and <a href="https://github.com/samply/lens">samply/lens-core</a>.</div>
       <img src="german-cancer-research-center-dkfz-logo-vector.svg" alt="German Cancer Research Center" height="40"/>
-      <img src="BMBF_logo.png" alt="EU" height="120"/>
+      <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="EU" height="120"/>
     </div>
   </footer>

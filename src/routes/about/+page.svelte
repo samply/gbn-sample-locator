@@ -9,9 +9,9 @@
 </p>
 
 <div class="logos">
-    <img src="GBN_logo.svg" alt="gbn logo">
+    <img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" alt="gbn logo">
     <img src="BBMRI-ERIC-gateway-for-health.svg" alt="bbmri-eric logo">
-    <img src="BMBF_logo.svg#svgView(viewBox(295, 350, 1, 130))" alt="sponsored by the federal ministry of research logo">
+    <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="sponsored by the federal ministry of research logo">
 </div>
 
 <h2>Step 1: Find relevant biosamples with the Sample Locator</h2>
