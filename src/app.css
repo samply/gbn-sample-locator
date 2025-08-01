@@ -21,7 +21,7 @@
   --light-red: #ff0000;
   --dark-red: #800000;
   --orange: #e95713;
-  --cyan: #43d1b8
+  --cyan: #43d1b8;
   --light-orange: #ffa750;
 
   --border-radius-small: 5px;
@@ -423,7 +423,8 @@ lens-search-button {
 }
 
 lens-search-button::part(lens-search-button) {
-  background-color: var(--blue);
+  background-color: var(--gray);
+  color: white;
 }
 
 lens-search-button::part(lens-search-button):hover {
