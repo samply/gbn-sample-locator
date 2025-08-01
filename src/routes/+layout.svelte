@@ -1,35 +1,5 @@
 <style>
-* {
-    --color-gray: #3C3C3D;
-    --color-orange: #E95713;
-    --color-blue: #304757;
-    --color-light-gray: rgb(240, 243, 244);
-    --color-dark-blue-gray: #6F8795;
-    --color-site-background: #fff;
-    --color-border-light: #ced4da;
-    --color-background-light-gray: var(--color-dark-blue-gray);
-    /* --color-background-light-gray: #C5CFD5; */
-    --color-progressbar-success: var(--color-blue);
-    --color-progressbar-failed: var(--color-orange);
- 
-  }
- 
-  @font-face {
-    font-family: 'Titillium';
-    src: url(/fonts/Titillium/Titillium-Regular.otf);
-  }
- 
-  @font-face {
-    font-family: 'Titillium Bold';
-    src: url(/fonts/Titillium/Titillium-Bold.otf);
-  }
- 
 
-  * {
-    font-family: 'Titillium', sans-serif;
-    border-radius: 0;
-    margin: 0;
-  }
  
   /* Selects the app root */
   :host {
@@ -177,15 +147,29 @@
       width: 1272px;
     }
   }
+
+  .container {
+  margin: 0 var(--gap-s);
+  /* calculate min height to display footer on bottom of page */
+  /* calc(100vh - header - footer - footer-margin); */
+  min-height: calc(100vh - 55px - 147px - 60px);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: calc(1024px - 2 * var(--gap-s));
+    margin: 0 auto;
+  }
+}
 </style>
 
 <script>
 	let { children } = $props();
 </script>
 
-
-<header>
 <div class="container">
+<header>
+<div>
     <a href="/"><img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" alt="German Biobank Node"/></a>
     <menu class="menu">
       <a href="/about">About</a>
@@ -199,8 +183,9 @@
     <div class="footer-divider"></div>
     <div class="container">
       <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
-      <div> Made with ♥ and <a href="https://github.com/samply/lens">samply/lens-core</a>.</div>
+      <div> Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.</div>
       <img src="german-cancer-research-center-dkfz-logo-vector.svg" alt="German Cancer Research Center" height="40"/>
       <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="EU" height="120"/>
     </div>
   </footer>
+  </div>
