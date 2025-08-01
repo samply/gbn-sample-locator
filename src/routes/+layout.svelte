@@ -3,10 +3,10 @@
  
   /* Selects the app root */
   :host {
-    background-color: var(--color-site-background);
     display: grid;
     grid-template-rows: auto 0 1fr auto;
     height: 100vh;
+
   }
  
   header img {
@@ -47,12 +47,6 @@
  
   footer {
     padding-bottom: 2rem;
-  }
- 
-  .footer-divider {
-    height: 63px;
-    background-color: #6F8795;
-    margin-bottom: 60px;
   }
  
   footer .container {
@@ -179,9 +173,8 @@
   <div class="divider"></div>
 </header>
 {@render children()}
-<footer>
-    <div class="footer-divider"></div>
-    <div class="container">
+<footer class="container">
+    <div>
       <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
       <div> Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.</div>
       <img src="german-cancer-research-center-dkfz-logo-vector.svg" alt="German Cancer Research Center" height="40"/>

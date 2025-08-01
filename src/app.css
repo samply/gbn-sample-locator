@@ -142,7 +142,7 @@ header {
   grid-gap: var(--gap-s);
   padding: var(--gap-m);
   border-radius: var(--border-radius-small);
-  background-color: var(--lightest-gray);
+  background-color: var(--gray);
   justify-content: end;
 }
 
@@ -423,7 +423,7 @@ lens-search-button {
 }
 
 lens-search-button::part(lens-search-button) {
-  background-color: var(--gray);
+  background-color: var(--cyan);
   color: white;
 }
 

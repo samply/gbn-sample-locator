@@ -93,6 +93,7 @@
    <div class="banner">
   <h1>Sample Locator</h1>
   <h2>Search for human biospecimens across European biobanks</h2>
+  <img src="gba-banner.png" alt="sample locator banner">
 </div>
   <div class="search-wrapper">
     <div class="search">
