@@ -142,7 +142,7 @@ header {
   grid-gap: var(--gap-s);
   padding: var(--gap-m);
   border-radius: var(--border-radius-small);
-  background-color: var(--gray);
+  background-color: #dadcdd;
   justify-content: end;
 }
 
@@ -317,12 +317,6 @@ footer img {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  footer img:nth-child(2) {
-    min-width: 251px;
-  }
-  footer img:nth-child(3) {
-    margin: 0 80px;
   }
 }
 

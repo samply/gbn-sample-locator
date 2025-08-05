@@ -28,10 +28,7 @@
  
   .menu {
     display: flex;
-    margin-top: 25px;
     justify-content: space-between;
-    padding: 0 32px;
-    margin: 0;
   }
  
   .menu a {
@@ -78,14 +75,6 @@
       width: 720px;
     }
  
-  .menu {
-   display: flex;
-   justify-content: right;
-   margin: 0;
-   padding: 0;
-   margin-top: 25px;
- }
- 
  .menu a {
    text-decoration: none;
    cursor: pointer;
@@ -102,6 +91,10 @@
  }
  
  
+  }
+
+  .top-space {
+    margin-top: 70px;
   }
  
  
@@ -151,7 +144,6 @@
 
 @media screen and (min-width: 1024px) {
   .container {
-    max-width: calc(1024px - 2 * var(--gap-s));
     margin: 0 auto;
   }
 }
@@ -164,10 +156,12 @@
 <div class="container">
 <header>
 <div>
-    <a href="/"><img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" alt="German Biobank Node"/></a>
     <menu class="menu">
+          <a href="/"><img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" alt="German Biobank Node"/></a>
+          <div class="top-space">
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
+      </div>
     </menu>
   </div>
   <div class="divider"></div>
@@ -178,7 +172,7 @@
       <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
       <div> Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.</div>
       <img src="german-cancer-research-center-dkfz-logo-vector.svg" alt="German Cancer Research Center" height="40"/>
-      <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="EU" height="120"/>
+      <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="EU" height="120px"/>
     </div>
   </footer>
   </div>
