@@ -83,9 +83,9 @@
     });
   });
 
-  let chartColors: string[] = ["#6F8795", "#8C9FAA", "#A9B7BF", "#C5CFD5"];
+  let chartColors: string[] = ["#ea5167", "#ffcc00", "#a0e8db"];
 
-  let chartHoverColors: string[] = ["#F1A948"];
+  let chartHoverColors: string[] = ["#a8a4a5"];
 </script>
 
 
@@ -93,7 +93,7 @@
    <div class="banner">
   <h1>Sample Locator</h1>
   <h2>Search for human biospecimens across European biobanks</h2>
-  <img src="gba-banner.png" alt="sample locator banner">
+  <img src="gba-banner.png" alt="sample locator banner" class="banner-img">
 </div>
   <div class="search-wrapper">
     <div class="search">
@@ -113,7 +113,7 @@
     <button class="catalogue-toggle-button" onclick={toggleCatalogue}>
       <img
         class={catalogueopen ? "open" : ""}
-        src="/search/right-arrow-svgrepo-com.svg"
+        src="right-arrow-svgrepo-com.svg"
         alt="catalogue toggle button icon"
       />
       <span>Full Parameter Search</span>
@@ -217,4 +217,8 @@
   .search-bar-wrapper {
     flex-grow: 1;
   }
+
+  .banner-img {
+max-width: 100%
+}
 </style>
