@@ -78,7 +78,7 @@
 
   });
 
-  let chartColors: string[] = ["#485156", "##576269", "##65717a", "#75838e" ];
+  let chartColors: string[] = ["#485156", "#8a9ca6", "#65717a", "#75838e" ];
 
   let chartHoverColors: string[] = ["#a8a4a5"];
 </script>
