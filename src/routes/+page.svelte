@@ -199,26 +199,3 @@
 </main>
 
 <error-toasts></error-toasts>
-
-<style>
-  .catalogue-toggle-wrapper {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-s);
-    margin-bottom: var(--gap-s);
-  }
-
-  .search {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-s);
-  }
-
-  .search-bar-wrapper {
-    flex-grow: 1;
-  }
-
-  .banner-img {
-max-width: 100%
-}
-</style>

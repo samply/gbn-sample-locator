@@ -179,7 +179,7 @@ lens-search-bar-multiple {
 }
 
 .catalogue-toggle-button:hover {
-  background-color: var(--light-blue);
+  background-color: #2d8f7d;
 }
 
 .catalogue-toggle-button img {
@@ -544,4 +544,42 @@ lens-search-button::part(lens-search-button) {
   20% {
     transform: scaleY(1);
   }
+}
+
+  .catalogue-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-s);
+    margin-bottom: var(--gap-s);
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-s);
+  }
+
+  .search-bar-wrapper {
+    flex-grow: 1;
+  }
+
+  .banner-img {
+max-width: 100%
+}
+
+lens-query-explain-button::part(lens-query-explain-button) {
+    border-color: var(--cyan);
+    background-color: white;
+}
+
+lens-search-bar-multiple::part(lens-searchbar-chip) {
+  background-color: var(--cyan);
+}
+
+lens-catalgoue::part(lens-add-to-query-button) {
+  background-color: var(--cyan);
+}
+
+lens-catalgoue::part(lens-data-tree-add-all-options-button) {
+  background-color: var(--cyan);
 }

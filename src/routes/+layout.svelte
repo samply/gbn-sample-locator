@@ -42,15 +42,13 @@
     color: #6F8795;
   }
  
-  footer {
-    padding-bottom: 2rem;
-  }
- 
-  footer .container {
+  .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+        padding-bottom: 2rem;
+
+    flex-direction: row;
     gap: 3rem;
   }
  
@@ -83,31 +81,11 @@
    letter-spacing: 1px;
  }
  
- header .container {
-   display: grid;
-   grid-template-columns: auto 1fr;
-   grid-gap: 40px;
-   line-height: 40px;
- }
- 
  
   }
 
   .top-space {
-    margin-top: 70px;
-  }
- 
- 
-  @media (min-width: 992px) {
-    .container {
-      width: 960px;
-    }
-    
-  footer .container {
-   flex-direction: row;
-   gap: 0;
- }
- 
+    margin-top: 40px;
   }
  
  
@@ -122,25 +100,16 @@
  }
  
   }
- 
-  @media (min-width: 1280px) {
-    .container {
-      width: 1200px;
-    }
-  }
- 
-  @media (min-width: 1440px) {
-    .container {
-      width: 1272px;
-    }
-  }
 
   .container {
   margin: 0 var(--gap-s);
-  /* calculate min height to display footer on bottom of page */
-  /* calc(100vh - header - footer - footer-margin); */
-  min-height: calc(100vh - 55px - 147px - 60px);
 }
+
+ .spacer {
+  justify-content: space-between;
+     flex-direction: row;
+   gap: 0;
+ }
 
 @media screen and (min-width: 1024px) {
   .container {
@@ -167,12 +136,10 @@
   <div class="divider"></div>
 </header>
 {@render children()}
-<footer class="container">
-    <div>
-      <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
+<footer class="footer-container">
+      <div><a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a></div>
       <div> Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.</div>
       <img src="german-cancer-research-center-dkfz-logo-vector.svg" alt="German Cancer Research Center" height="40"/>
       <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="EU" height="120px"/>
-    </div>
   </footer>
   </div>
