@@ -179,7 +179,7 @@ lens-search-bar-multiple {
 }
 
 .catalogue-toggle-button:hover {
-  background-color: #2d8f7d;
+  background-color: #38b89f;
 }
 
 .catalogue-toggle-button img {
@@ -576,10 +576,15 @@ lens-search-bar-multiple::part(lens-searchbar-chip) {
   background-color: var(--cyan);
 }
 
-lens-catalgoue::part(lens-add-to-query-button) {
-  background-color: var(--cyan);
+lens-catalogue::part(lens-add-to-query-button) {
+  color: var(--cyan);
 }
 
-lens-catalgoue::part(lens-data-tree-add-all-options-button) {
+lens-catalogue::part(lens-add-to-query-button):hover {
+  color: #38b89f;
+}
+
+lens-catalogue::part(lens-data-tree-add-all-options-button) {
+  color: white;
   background-color: var(--cyan);
 }
