@@ -3,10 +3,10 @@
  
   /* Selects the app root */
   :host {
-    background-color: var(--color-site-background);
     display: grid;
     grid-template-rows: auto 0 1fr auto;
     height: 100vh;
+
   }
  
   header img {
@@ -28,10 +28,7 @@
  
   .menu {
     display: flex;
-    margin-top: 25px;
     justify-content: space-between;
-    padding: 0 32px;
-    margin: 0;
   }
  
   .menu a {
@@ -45,21 +42,13 @@
     color: #6F8795;
   }
  
-  footer {
-    padding-bottom: 2rem;
-  }
- 
-  .footer-divider {
-    height: 63px;
-    background-color: #6F8795;
-    margin-bottom: 60px;
-  }
- 
-  footer .container {
+  .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+        padding-bottom: 2rem;
+
+    flex-direction: row;
     gap: 3rem;
   }
  
@@ -84,14 +73,6 @@
       width: 720px;
     }
  
-  .menu {
-   display: flex;
-   justify-content: right;
-   margin: 0;
-   padding: 0;
-   margin-top: 25px;
- }
- 
  .menu a {
    text-decoration: none;
    cursor: pointer;
@@ -100,27 +81,11 @@
    letter-spacing: 1px;
  }
  
- header .container {
-   display: grid;
-   grid-template-columns: auto 1fr;
-   grid-gap: 40px;
-   line-height: 40px;
- }
- 
  
   }
- 
- 
-  @media (min-width: 992px) {
-    .container {
-      width: 960px;
-    }
-    
-  footer .container {
-   flex-direction: row;
-   gap: 0;
- }
- 
+
+  .top-space {
+    margin-top: 40px;
   }
  
  
@@ -135,29 +100,19 @@
  }
  
   }
- 
-  @media (min-width: 1280px) {
-    .container {
-      width: 1200px;
-    }
-  }
- 
-  @media (min-width: 1440px) {
-    .container {
-      width: 1272px;
-    }
-  }
 
   .container {
   margin: 0 var(--gap-s);
-  /* calculate min height to display footer on bottom of page */
-  /* calc(100vh - header - footer - footer-margin); */
-  min-height: calc(100vh - 55px - 147px - 60px);
 }
+
+ .spacer {
+  justify-content: space-between;
+     flex-direction: row;
+   gap: 0;
+ }
 
 @media screen and (min-width: 1024px) {
   .container {
-    max-width: calc(1024px - 2 * var(--gap-s));
     margin: 0 auto;
   }
 }
@@ -170,22 +125,21 @@
 <div class="container">
 <header>
 <div>
-    <a href="/"><img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" alt="German Biobank Node"/></a>
     <menu class="menu">
+          <a href="/"><img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" alt="German Biobank Node"/></a>
+          <div class="top-space">
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
+      </div>
     </menu>
   </div>
   <div class="divider"></div>
 </header>
 {@render children()}
-<footer>
-    <div class="footer-divider"></div>
-    <div class="container">
-      <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
+<footer class="footer-container">
+      <div><a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a></div>
       <div> Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.</div>
       <img src="german-cancer-research-center-dkfz-logo-vector.svg" alt="German Cancer Research Center" height="40"/>
-      <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="EU" height="120"/>
-    </div>
+      <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="EU" height="120px"/>
   </footer>
   </div>
