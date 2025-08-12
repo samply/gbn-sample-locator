@@ -76,11 +76,6 @@
     // Set the catalogue
     setCatalogue(catalogue as Catalogue);
 
-    // Run empty query on initial load
-    sendQuery({
-      operand: "OR",
-      children: [],
-    });
   });
 
   let chartColors: string[] = ["#ea5167", "#ffcc00", "#a0e8db"];

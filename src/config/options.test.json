@@ -1,4 +1,5 @@
 {
+    "spotUrl": "https://samplelocator.test.bbmri.de/backend",
     "siteMappings": {
         "aachen": "Aachen",
         "augsburg": "Augsburg",
