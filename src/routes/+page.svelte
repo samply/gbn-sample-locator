@@ -79,10 +79,15 @@
     switch (env.PUBLIC_ENVIRONMENT) {
       case "prod":
         options = optionsProd;
+        break;
       case "test":
         options = optionsTest;
+        break;
       case "pub":
         options = optionsPub;
+        break;
+      default:
+        options = optionsTest;
     }
     setOptions(options);
     // Set the catalogue
@@ -148,61 +153,63 @@
       <lens-result-summary></lens-result-summary>
     </div>
     <div class="chart-wrapper result-table">
-            {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
-      <lens-result-table pageSize="10" pageSizeSwitcher={true}>
-        <div slot="beneath-pagination">
-          <lens-negotiate-button class="negotiate" type="Negotiator"
-          ></lens-negotiate-button>
-                </lens-result-table>
-          <lens-search-modified-display>
-            <div>Search has been modified!</div>
-          </lens-search-modified-display>
-          {/if}
+      {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
+        <lens-result-table pageSize="10" pageSizeSwitcher={true}>
+          <div slot="beneath-pagination">
+            <lens-negotiate-button class="negotiate" type="Negotiator"
+            ></lens-negotiate-button>
+          </div></lens-result-table
+        >
+        <lens-search-modified-display>
+          <div>Search has been modified!</div>
+        </lens-search-modified-display>
+      {/if}
 
-    <div class="chart-wrapper">
-      <lens-chart
-        title="Gender Distribution"
-        dataKey="gender"
-        chartType="pie"
-        displayLegends={true}
-        backgroundColor={chartColors}
-        backgroundHoverColor={chartHoverColors}
-      ></lens-chart>
-    </div>
+      <div class="chart-wrapper">
+        <lens-chart
+          title="Gender Distribution"
+          dataKey="gender"
+          chartType="pie"
+          displayLegends={true}
+          backgroundColor={chartColors}
+          backgroundHoverColor={chartHoverColors}
+        ></lens-chart>
+      </div>
 
-    <div class="chart-wrapper chart-age-distribution">
-      <lens-chart
-        title="Age Distribution"
-        dataKey="donor_age"
-        chartType="bar"
-        groupRange={10}
-        filterRegex="^(1*[12]*[0-9])"
-        backgroundColor={chartColors}
-        backgroundHoverColor={chartHoverColors}
-      ></lens-chart>
-    </div>
+      <div class="chart-wrapper chart-age-distribution">
+        <lens-chart
+          title="Age Distribution"
+          dataKey="donor_age"
+          chartType="bar"
+          groupRange={10}
+          filterRegex="^(1*[12]*[0-9])"
+          backgroundColor={chartColors}
+          backgroundHoverColor={chartHoverColors}
+        ></lens-chart>
+      </div>
 
-    <div class="chart-wrapper chart-sample-kind">
-      <lens-chart
-        title="Specimens"
-        dataKey="sample_kind"
-        chartType="bar"
-        backgroundColor={chartColors}
-        backgroundHoverColor={chartHoverColors}
-      >
-      </lens-chart>
-    </div>
+      <div class="chart-wrapper chart-sample-kind">
+        <lens-chart
+          title="Specimens"
+          dataKey="sample_kind"
+          chartType="bar"
+          backgroundColor={chartColors}
+          backgroundHoverColor={chartHoverColors}
+        >
+        </lens-chart>
+      </div>
 
-    <div class="chart-wrapper chart-diagnosis">
-      <lens-chart
-        title="Diagnosis"
-        dataKey="diagnosis"
-        chartType="bar"
-        groupingDivider="."
-        groupingLabel=".%"
-        backgroundColor={chartColors}
-        backgroundHoverColor={chartHoverColors}
-      ></lens-chart>
+      <div class="chart-wrapper chart-diagnosis">
+        <lens-chart
+          title="Diagnosis"
+          dataKey="diagnosis"
+          chartType="bar"
+          groupingDivider="."
+          groupingLabel=".%"
+          backgroundColor={chartColors}
+          backgroundHoverColor={chartHoverColors}
+        ></lens-chart>
+      </div>
     </div>
   </div>
 </main>
