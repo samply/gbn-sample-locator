@@ -96,11 +96,119 @@
         "authorizationHeader": "Basic YmJtcmktZGlyZWN0b3J5Omw5RFJLVUROcTBTbDAySXhaUGQ2",
         "siteMappings": [
             {
+                "site": "Aachen",
+                "collection": "bbmri-eric:ID:DE_RWTHCBMB:collection:RWTHCBMB_BC",
+                "site_id": "bbmri-eric:ID:DE_RWTHCBMB",
+                "collection_name": "Collection of RWTH cBMB Broad Consent Aachen"
+            },
+            {
+                "site": "Augsburg",
+                "collection": "bbmri-eric:ID:DE_ACBB:collection:LIQUID",
+                "site_id": "bbmri-eric:ID:DE_ACBB",
+                "collection_name": "ACBB collection Liquid"
+            },
+            {
+                "site": "Berlin",
+                "collection": "bbmri-eric:ID:DE_ZeBanC:collection:COVID19",
+                "site_id": "bbmri-eric:ID:DE_ZeBanC",
+                "collection_name": "Existing collection of COVID-19 cases"
+            },
+            {
+                "site": "Bonn",
+                "site_id": "bbmri-eric:ID:DE_BBB",
+                "collection": "bbmri-eric:ID:DE_BBB:collection:MainCollection",
+                "collection_name": "Main collection BioBank Bonn"
+            },
+            {
+                "site": "Dresden",
+                "collection": "bbmri-eric:ID:DE_BBD:collection:DILB",
+                "site_id": "bbmri-eric:ID:DE_BBD",
+                "collection_name": "Dresden Integrated Liquid Biobank"
+            },
+            {
+                "site": "Essen",
+                "collection": "bbmri-eric:ID:DE_BMBN:collection:Main_collection",
+                "site_id": "bbmri-eric:ID:DE_BMBN",
+                "collection_name": "Main Collection of the BioMaterial Bank Nord"
+            },
+            {
+                "site": "Göttingen",
+                "collection": "bbmri-eric:ID:DE_UMGB:collection:UMG-startegy",
+                "site_id": "bbmri-eric:ID:DE_UMGB:collection",
+                "collection_name": "UMGöttingen Collection"
+            },
+            {
+                "site": "Frankfurt",
+                "site_id": "bbmri-eric:ID:DE_iBDF",
+                "collection": "bbmri-eric:ID:DE_iBDF:collection:UCT",
+                "collection_name": "UCT Biobank Frankfurt"
+            },
+                        {
+                "site": "Freiburg",
+                "site_id": "bbmri-eric:ID:DE_FREEZE-Biobank",
+                "collection": "bbmri-eric:ID:DE_FREEZE-Biobank:collection:FREEZE-Liquid",
+                "collection_name": "FREEZE-Liquid"
+            },
+            {
+                "site": "Hannover",
+                "site_id": "bbmri-eric:ID:DE_HUB",
+                "collection": "bbmri-eric:ID:DE_HUB:collection:ProBase",
+                "collection_name": "Collection Probase Hannover"
+            },
+            {
+                "site": "Heidelberg",
+                "site_id": "bbmri-eric:ID:DE_BMBH",
+                "collection": "bbmri-eric:ID:DE_BMBH:collection:Lungenbiobank",
+                "collection_name": "Lungenbiobank Heidelberg"
+            },
+            {
+                "site": "Leipzig",
+                "site_id": "bbmri-eric:ID:DE_LMB",
+                "collection": "bbmri-eric:ID:DE_LMB:collection:LIFE_ADULT",
+                "collection_name": "LIFE-Adult-Study Basis Leipzig"
+            },
+            {
+                "site": "Lübeck",
+                "collection": "bbmri-eric:ID:DE_ICBL:collection:ICBL",
+                "site_id": "bbmri-eric:ID:DE_ICBL",
+                "collection_name": "Main Collection ICB-Lübeck"
+            },
+            {
+                "site": "München-HMGU",
+                "site_id": "bbmri-eric:ID:DE_Helmholtz-MuenchenBiobank",
+                "collection": "bbmri-eric:ID:DE_Helmholtz-MuenchenBiobank:collection:DE_KORA",
+                "collection_name": "Cooperative Health Research in the Region of Augsburg"
+            },
+            {
+                "site": "Mannheim",
+                "site_id": "bbmri-eric:ID:DE_BioPsy",
+                "collection": "bbmri-eric:ID:DE_BioPsy:collection:Main_collecion",
+                "collection_name": "Biobank of the Center for Innovative Psychiatric and Psychotherapeutic Research"
+            },
+            {
+                "site": "Marburg",
+                "site_id": "bbmri-eric:ID:DE_CBBMR",
+                "collection": "bbmri-eric:ID:DE_CBBMR:collection:main",
+                "collection_name": "Main Collectiion CBBMR"
+            },
+            {
+                "site": "Münster",
+                "site_id": "bbmri-eric:ID:DE_CBBMR",
+                "collection": "bbmri-eric:ID:DE_CBBMR:collection:main",
+                "collection_name": "Main Collectiion CBBMR"
+            },
+            {
+                "site": "Regensburg",
+                "site_id": "bbmri-eric:ID:DE_ZBR",
+                "collection": "bbmri-eric:ID:DE_ZBR:collection:Tissue",
+                "collection_name": "Tissue Samples"
+            },
+            {
                 "site": "Würzburg",
                 "site_id": "bbmri-eric:ID:DE_ibdw",
                 "collection": "bbmri-eric:ID:DE_ibdw:collection:bc",
                 "collection_name": "Collection Broad Consent Würzburg"
             }
-                ]
+        ]
     }
 }

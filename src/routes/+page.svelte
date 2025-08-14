@@ -26,8 +26,12 @@
     querySpot,
   } from "@samply/lens";
   import { onMount } from "svelte";
+  import { env } from "$env/dynamic/public";
+
   import { v4 as uuidv4 } from "uuid";
   import optionsTest from "../config/options.test.json";
+  import optionsPub from "../config/options.pub.json";
+  import optionsProd from "../config/options.prod.json";
   import catalogue from "../catalogues/gbn.json";
 
   let catalogueopen = $state(false);
@@ -71,25 +75,35 @@
   onMount(() => {
     // Set the options based on the environment
     let options: LensOptions = optionsTest;
-    setOptions(options);
 
+    switch (env.PUBLIC_ENVIRONMENT) {
+      case "prod":
+        options = optionsProd;
+      case "test":
+        options = optionsTest;
+      case "pub":
+        options = optionsPub;
+    }
+    setOptions(options);
     // Set the catalogue
     setCatalogue(catalogue as Catalogue);
-
   });
 
-  let chartColors: string[] = ["#485156", "#8a9ca6", "#65717a", "#75838e" ];
+  let chartColors: string[] = ["#485156", "#8a9ca6", "#65717a", "#75838e"];
 
   let chartHoverColors: string[] = ["#a8a4a5"];
 </script>
 
-
 <main>
-   <div class="banner">
-  <h1>Sample Locator</h1>
-  <h2>Search for human biospecimens across European biobanks</h2>
-  <img src="gba-banner.png" alt="sample locator banner" class="banner-img">
-</div>
+  <div class="banner">
+    <img src="gba-banner.png" alt="sample locator banner" class="banner-img" />
+    <div class="overlay">
+      <div class="text-bubble">
+        <h1>Sample Locator</h1>
+        <h2>Search for human biospecimens across European biobanks</h2>
+      </div>
+    </div>
+  </div>
   <div class="search-wrapper">
     <div class="search">
       <div class="search-bar-wrapper">
@@ -134,16 +148,16 @@
       <lens-result-summary></lens-result-summary>
     </div>
     <div class="chart-wrapper result-table">
+            {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
       <lens-result-table pageSize="10" pageSizeSwitcher={true}>
         <div slot="beneath-pagination">
           <lens-negotiate-button class="negotiate" type="Negotiator"
           ></lens-negotiate-button>
+                </lens-result-table>
           <lens-search-modified-display>
             <div>Search has been modified!</div>
           </lens-search-modified-display>
-        </div>
-      </lens-result-table>
-    </div>
+          {/if}
 
     <div class="chart-wrapper">
       <lens-chart

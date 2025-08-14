@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --white: #ffffff;
@@ -98,11 +96,33 @@ header {
   }
 }
 
+/* Container holds the image and the overlay */
 .banner {
-  margin: auto;
-  max-width: fit-content;
-  padding: var(--gap-l);
+  position: relative; /* ⬅️ lets us absolutely-position the overlay */
+  margin: 2rem auto; /* center on the page */
+  width: fit-content; /* shrink-wrap to the image width */
+  overflow: hidden; /* make overlay respect the rounding */
 }
+
+/* Make the image fill the container width cleanly */
+.banner-img {
+  display: block; /* removes baseline gap below images */
+  width: 100%;
+  height: auto;
+}
+
+/* Full-cover semi-transparent layer + top-centered text */
+.overlay {
+  position: absolute;
+  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  justify-content: flex-start; /* keep text near the top */
+  padding-top: clamp(12px, 4vw, 32px); /* spacing from top */
+  text-align: center;
+}
+
 
 .banner h1 {
   margin: 0;
@@ -111,15 +131,20 @@ header {
   text-align: center;
   color: var(--cyan);
 }
-
 .banner h2 {
   margin: 0;
   font-size: var(--font-size-xl);
   font-weight: normal;
   text-align: center;
-  color: var(--dark-gray);
+  color: white;
 }
 
+.text-bubble {
+  background: rgba(100, 87, 87, 0.706);
+  padding: 16px; /* darken image for contrast */
+    border-radius: 16px;          /* rounded corners */
+
+}
 
 .search-wrapper {
   padding: var(--gap-m) 0;
@@ -546,30 +571,30 @@ lens-search-button::part(lens-search-button) {
   }
 }
 
-  .catalogue-toggle-wrapper {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-s);
-    margin-bottom: var(--gap-s);
-  }
+.catalogue-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-s);
+  margin-bottom: var(--gap-s);
+}
 
-  .search {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-s);
-  }
+.search {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-s);
+}
 
-  .search-bar-wrapper {
-    flex-grow: 1;
-  }
+.search-bar-wrapper {
+  flex-grow: 1;
+}
 
-  .banner-img {
-max-width: 100%
+.banner-img {
+  max-width: 100%;
 }
 
 lens-query-explain-button::part(lens-query-explain-button) {
-    border-color: var(--cyan);
-    background-color: white;
+  border-color: var(--cyan);
+  background-color: white;
 }
 
 lens-search-bar-multiple::part(lens-searchbar-chip) {
