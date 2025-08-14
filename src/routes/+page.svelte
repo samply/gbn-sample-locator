@@ -94,7 +94,7 @@
     setCatalogue(catalogue as Catalogue);
   });
 
-  let chartColors: string[] = ["#485156", "#8a9ca6", "#65717a", "#75838e"];
+  let chartColors: string[] = ["#7DD3C0", "#1A8A7B", "#A8E6D8", "#0F5D52"];
 
   let chartHoverColors: string[] = ["#a8a4a5"];
 </script>

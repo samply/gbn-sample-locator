@@ -16,10 +16,10 @@
 </p>
 
 <div class="logos">
-  <img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" alt="gbn logo" />
-  <img src="BBMRI-ERIC-gateway-for-health.svg" alt="bbmri-eric logo" />
+  <img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" height="100px" alt="gbn logo" />
+  <img src="BBMRI-ERIC-gateway-for-health.svg" height="75px" alt="bbmri-eric logo" />
   <img
-    src="BMFTR_en_DTP_CMYK_gef_durch.jpg"
+    src="BMFTR_en_DTP_CMYK_gef_durch.jpg" height="110px"
     alt="sponsored by the federal ministry of research logo"
   />
 </div>
@@ -79,7 +79,7 @@
 
 <style>
   * {
-    padding: 3rem;
+    padding: 1rem;
     max-width: 1000px;
     margin: auto;
   }
@@ -96,11 +96,10 @@
   .logos {
     display: grid;
     grid-template-columns: 33% 33% 20%;
-    grid-gap: 7%;
+    grid-gap: 10%;
     justify-content: space-between;
     align-items: center;
-    margin: 5rem auto;
-    max-width: 600px;
+    margin: 3rem auto;
   }
   p {
     text-align: justify;
