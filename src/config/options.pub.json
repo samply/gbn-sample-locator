@@ -1,0 +1,55 @@
+{
+    "spotUrl": "https://samplelocator.bbmri.de/backendagg",
+    "chartOptions": {
+        "gender": {
+            "legendMapping": {
+                "male": "Male",
+                "female": "Female",
+                "unknown": "Unknown",
+                "other": "Divers / intersex"
+            }
+        },
+        "sample_kind": {
+            "tooltips": {
+                "tissue-ffpe": "Tissue (FFPE)",
+                "tissue-frozen": "Tissue snap frozen",
+                "tissue-other": "Other tissue storage",
+                "whole-blood": "Whole blood",
+                "blood-serum": "Serum",
+                "blood-plasma": "Plasma",
+                "buffy-coat": "Buffy coat",
+                "peripheral-blood-cells-vitals": "Peripheral blood cells",
+                "dried-whole-blood": "Dried whole blood",
+                "swab": "Swab",
+                "ascites": "Ascites",
+                "stool-faeces": "Faeces",
+                "urine": "Urine",
+                "csf-liquor": "Liquor/CSF",
+                "bone-marrow": "Bone marrow",
+                "saliva": "Saliva",
+                "liquid-other": "Other liquid biosample",
+                "dna": "DNA",
+                "rna": "RNA",
+                "derivative-other": "Other derivative"
+            }
+        }
+    },
+    "resultSummaryOptions": {
+        "title": "Results",
+        "infoButtonText": "To make re-identification more difficult, results of each site are modified slightly and rounded. If a location reports no match, zero is displayed for that location.",
+        "dataTypes": [
+            {
+                "title": "Sites",
+                "dataKey": "sites"
+            },
+            {
+                "title": "Patients",
+                "dataKey": "patient"
+            },
+            {
+                "title": "Specimens",
+                "dataKey": "specimen"
+            }
+        ]
+    }
+}
