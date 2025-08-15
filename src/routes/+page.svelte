@@ -94,7 +94,7 @@
     setCatalogue(catalogue as Catalogue);
   });
 
-  let chartColors: string[] = ["#7DD3C0", "#1A8A7B", "#A8E6D8", "#0F5D52"];
+  let chartColors: string[] = ["#42d1b8", "#d9f6f1", "#68dac6", "#b3ede3"];
 
   let chartHoverColors: string[] = ["#a8a4a5"];
 </script>
@@ -160,56 +160,56 @@
             ></lens-negotiate-button>
           </div></lens-result-table
         >
-        <lens-search-modified-display>
-          <div>Search has been modified!</div>
-        </lens-search-modified-display>
       {/if}
+      <lens-search-modified-display>
+        <div>Search has been modified!</div>
+      </lens-search-modified-display>
+    </div>
 
-      <div class="chart-wrapper">
-        <lens-chart
-          title="Gender Distribution"
-          dataKey="gender"
-          chartType="pie"
-          displayLegends={true}
-          backgroundColor={chartColors}
-          backgroundHoverColor={chartHoverColors}
-        ></lens-chart>
-      </div>
+    <div class="chart-wrapper">
+      <lens-chart
+        title="Gender Distribution"
+        dataKey="gender"
+        chartType="pie"
+        displayLegends={true}
+        backgroundColor={chartColors}
+        backgroundHoverColor={chartHoverColors}
+      ></lens-chart>
+    </div>
 
-      <div class="chart-wrapper chart-age-distribution">
-        <lens-chart
-          title="Age Distribution"
-          dataKey="donor_age"
-          chartType="bar"
-          groupRange={10}
-          filterRegex="^(1*[12]*[0-9])"
-          backgroundColor={chartColors}
-          backgroundHoverColor={chartHoverColors}
-        ></lens-chart>
-      </div>
+    <div class="chart-wrapper chart-age-distribution">
+      <lens-chart
+        title="Age Distribution"
+        dataKey="donor_age"
+        chartType="bar"
+        groupRange={10}
+        filterRegex="^(1*[12]*[0-9])"
+        backgroundColor={chartColors}
+        backgroundHoverColor={chartHoverColors}
+      ></lens-chart>
+    </div>
 
-      <div class="chart-wrapper chart-sample-kind">
-        <lens-chart
-          title="Specimens"
-          dataKey="sample_kind"
-          chartType="bar"
-          backgroundColor={chartColors}
-          backgroundHoverColor={chartHoverColors}
-        >
-        </lens-chart>
-      </div>
+    <div class="chart-wrapper chart-sample-kind">
+      <lens-chart
+        title="Specimens"
+        dataKey="sample_kind"
+        chartType="bar"
+        backgroundColor={chartColors}
+        backgroundHoverColor={chartHoverColors}
+      >
+      </lens-chart>
+    </div>
 
-      <div class="chart-wrapper chart-diagnosis">
-        <lens-chart
-          title="Diagnosis"
-          dataKey="diagnosis"
-          chartType="bar"
-          groupingDivider="."
-          groupingLabel=".%"
-          backgroundColor={chartColors}
-          backgroundHoverColor={chartHoverColors}
-        ></lens-chart>
-      </div>
+    <div class="chart-wrapper chart-diagnosis">
+      <lens-chart
+        title="Diagnosis"
+        dataKey="diagnosis"
+        chartType="bar"
+        groupingDivider="."
+        groupingLabel=".%"
+        backgroundColor={chartColors}
+        backgroundHoverColor={chartHoverColors}
+      ></lens-chart>
     </div>
   </div>
 </main>
