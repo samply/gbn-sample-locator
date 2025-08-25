@@ -151,6 +151,9 @@
   <div class="charts">
     <div class="chart-wrapper result-summary">
       <lens-result-summary></lens-result-summary>
+                {#if env.PUBLIC_ENVIRONMENT === "pub"}
+                    <a href="https://samplelocator.bbmri.de/search">LOGIN FOR DETAILED RESULTS</a>
+                {/if}
     </div>
     <div class="chart-wrapper result-table">
       {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
