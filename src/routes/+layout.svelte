@@ -12,6 +12,7 @@
           ><img
             src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg"
             alt="German Biobank Node"
+            height="121px"
           /></a
         >
         <div class="top-space">
@@ -51,7 +52,6 @@
   }
 
   header img {
-    height: 70px;
     margin-left: 32px;
   }
 
@@ -129,10 +129,6 @@
   @media (min-width: 1200px) {
     .container {
       width: 1140px;
-    }
-
-    header img {
-      height: 93px;
     }
   }
 

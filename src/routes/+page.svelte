@@ -94,7 +94,8 @@
     setCatalogue(catalogue as Catalogue);
   });
 
-  let chartColors: string[] = ["#42d1b8", "#d9f6f1", "#68dac6", "#b3ede3"];
+  let chartColors: string[] = ["#42d1b8", "#485156", "#8ee3d4", "#91979a"];
+  let diagnosisColors: string[] = ["#42d1b8"]
 
   let chartHoverColors: string[] = ["#a8a4a5"];
 </script>
@@ -103,10 +104,8 @@
   <div class="banner">
     <img src="gba-banner.png" alt="sample locator banner" class="banner-img" />
     <div class="overlay">
-      <div class="text-bubble">
         <h1>Sample Locator</h1>
-        <h2>Search for human biospecimens across European biobanks</h2>
-      </div>
+        <h2>Search for human biospecimens and associated <br/> data across European biobanks</h2>
     </div>
   </div>
   <div class="search-wrapper">
@@ -210,7 +209,7 @@
         chartType="bar"
         groupingDivider="."
         groupingLabel=".%"
-        backgroundColor={chartColors}
+        backgroundColor={diagnosisColors}
         backgroundHoverColor={chartHoverColors}
       ></lens-chart>
     </div>

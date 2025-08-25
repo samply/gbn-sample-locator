@@ -39,6 +39,8 @@
   --font-size-l: 18px;
   --font-size-xl: 24px;
   --font-size-xxl: 32px;
+    --font-size-xxxl: 40px;
+
 
   --font-family: "Montserrat", sans-serif;
   --font-optical-sizing: auto;
@@ -115,35 +117,24 @@ header {
 .overlay {
   position: absolute;
   inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  color: #485156;
   display: flex;
   flex-direction: column;
   align-items: center; /* center horizontally */
   justify-content: flex-start; /* keep text near the top */
   padding-top: clamp(12px, 4vw, 32px); /* spacing from top */
-  text-align: center;
 }
 
 
 .banner h1 {
   margin: 0;
-  font-size: var(--font-size-xxl);
-  font-weight: normal;
-  text-align: center;
-  color: var(--cyan);
+  font-size: var(--font-size-xxxl);
+  font-weight: bold;
 }
 .banner h2 {
   margin: 0;
-  font-size: var(--font-size-xl);
-  font-weight: normal;
-  text-align: center;
-  color: white;
-}
-
-.text-bubble {
-  background: rgba(100, 87, 87, 0.706);
-  padding: 16px; /* darken image for contrast */
-    border-radius: 16px;          /* rounded corners */
-
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
 }
 
 .search-wrapper {
@@ -433,7 +424,7 @@ lens-search-bar-multiple::part(query-delete-button-value) {
 }
 
 lens-search-bar-multiple::part(query-delete-button-value):hover {
-  color: var(--orange);
+  color: #ff5167;
 }
 
 lens-search-button {
