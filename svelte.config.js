@@ -6,6 +6,7 @@ const configFile = process.env.SVELTE_CONFIG || "base";
 let config;
 
 if (configFile === "pub") {
+  console.log("Running pub build")
   /** @type {import('@sveltejs/kit').Config} */
   config = {
     // Consult https://svelte.dev/docs/kit/integrations
