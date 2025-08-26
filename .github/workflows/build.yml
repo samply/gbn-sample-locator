@@ -40,7 +40,8 @@ jobs:
         with:
             # The Docker Hub Repository you want eventually push to, e.g samply/share-client
             image-name: "samply/gbn-sample-locator"
-            build-args: "SVELTE_CONFIG=pub"
+            build-args: |
+                SVELTE_CONFIG=pub
             #
             image-tag-suffix: "-pub"
             # Where to push your images ("dockerhub", "ghcr", "both" or "none")
