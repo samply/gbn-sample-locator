@@ -11,7 +11,7 @@ COPY src ./src
 COPY static ./static
 
 # Build the SvelteKit project
-RUN npm run build
+RUN SVELTE_CONFIG=${SVELTE_CONFIG}  npm run build
 
 # Production image
 FROM node:22-alpine AS runner
