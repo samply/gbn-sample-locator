@@ -29,6 +29,7 @@ jobs:
             image-name: "samply/gbn-sample-locator"
             # Where to push your images ("dockerhub", "ghcr", "both" or "none")
             push-to: dockerhub
+            ghrc-retention-policy: keep
         # This passes the secrets from calling workflow to the called workflow
         secrets:
             DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
