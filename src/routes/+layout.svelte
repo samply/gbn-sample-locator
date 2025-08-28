@@ -1,7 +1,10 @@
 <script>
-    import { env } from '$env/dynamic/public';
+  import { env } from "$env/dynamic/public";
 
   let { children } = $props();
+  import { redirectWithQuery } from "../function";
+
+  let logoutUrl = `/oauth2/sign_out?rd=${window.location.protocol}%2F%2F${window.location.hostname}%2Flogout`;
 </script>
 
 <div class="container">
@@ -16,11 +19,16 @@
           /></a
         >
         <div class="top-space">
-                {#if env.PUBLIC_ENVIRONMENT === "pub"}
-                      <a href="https://samplelocator.bbmri.de/search">Login</a>
-                {/if}
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          {#if env.PUBLIC_ENVIRONMENT === "pub"}
+            <button class="button-links" onclick={redirectWithQuery}>
+              LOGIN
+            </button>
+          {/if}
+          {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
+            <a href={logoutUrl}>LOGOUT</a>
+          {/if}
+          <a class="links" href="/about">About</a>
+          <a class="links" href="/contact">Contact</a>
         </div>
       </menu>
     </div>
@@ -49,16 +57,6 @@
     display: grid;
     grid-template-rows: auto 0 1fr auto;
     height: 100vh;
-  }
-
-  header img {
-    margin-left: 32px;
-  }
-
-  header .container {
-    margin-top: 40px;
-    background: white;
-    line-height: 40px;
   }
 
   .divider {
@@ -98,6 +96,26 @@
     cursor: pointer;
   }
 
+  .menu .links {
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 45px;
+    font-size: 21px;
+    letter-spacing: 1px;
+  }
+
+  .button-links {
+    background: none; /* remove button background */
+    border: none; /* remove border */
+    padding: 0; /* remove default padding */
+    margin: 0; /* remove margin if any */
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 45px;
+    font-size: 21px;
+    letter-spacing: 1px;
+  }
+
   .container {
     margin: 0 auto;
   }
@@ -111,14 +129,6 @@
   @media (min-width: 768px) {
     .container {
       width: 720px;
-    }
-
-    .menu a {
-      text-decoration: none;
-      cursor: pointer;
-      margin-left: 45px;
-      font-size: 21px;
-      letter-spacing: 1px;
     }
   }
 
@@ -134,12 +144,6 @@
 
   .container {
     margin: 0 var(--gap-s);
-  }
-
-  .spacer {
-    justify-content: space-between;
-    flex-direction: row;
-    gap: 0;
   }
 
   @media screen and (min-width: 1024px) {

@@ -33,6 +33,7 @@
   import optionsPub from "../config/options.pub.json";
   import optionsProd from "../config/options.prod.json";
   import catalogue from "../catalogues/gbn.json";
+    import { redirectWithQuery } from "../function";
 
   let catalogueopen = $state(false);
 
@@ -95,7 +96,7 @@
   });
 
   let chartColors: string[] = ["#42d1b8", "#485156", "#8ee3d4", "#91979a"];
-  let diagnosisColors: string[] = ["#42d1b8"]
+  let diagnosisColors: string[] = ["#42d1b8"];
 
   let chartHoverColors: string[] = ["#a8a4a5"];
 </script>
@@ -104,8 +105,11 @@
   <div class="banner">
     <img src="gba-banner.png" alt="sample locator banner" class="banner-img" />
     <div class="overlay">
-        <h1>Sample Locator</h1>
-        <h2>Search for human biospecimens and associated <br/> data across European biobanks</h2>
+      <h1>Sample Locator</h1>
+      <h2>
+        Search for human biospecimens and associated <br /> data across European
+        biobanks
+      </h2>
     </div>
   </div>
   <div class="search-wrapper">
@@ -150,13 +154,10 @@
   <div class="charts">
     <div class="chart-wrapper result-summary">
       <lens-result-summary></lens-result-summary>
-                {#if env.PUBLIC_ENVIRONMENT === "pub"}
-                    <a href="https://samplelocator.bbmri.de/search">LOGIN FOR DETAILED RESULTS</a>
-                {/if}
     </div>
     <div class="chart-wrapper result-table">
       {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
-        <lens-result-table pageSize="10" pageSizeSwitcher={true}>
+        <lens-result-table pageSize={50} pageSizeSwitcher={true}>
           <div slot="beneath-pagination">
             <lens-negotiate-button class="negotiate" type="Negotiator"
             ></lens-negotiate-button>
@@ -166,6 +167,9 @@
       <lens-search-modified-display>
         <div>Search has been modified!</div>
       </lens-search-modified-display>
+      {#if env.PUBLIC_ENVIRONMENT === "pub"}
+      <button class="login-button" onclick={redirectWithQuery}> LOGIN FOR DETAILED RESULTS  </button>
+      {/if}
     </div>
 
     <div class="chart-wrapper">

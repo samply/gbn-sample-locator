@@ -39,8 +39,7 @@
   --font-size-l: 18px;
   --font-size-xl: 24px;
   --font-size-xxl: 32px;
-    --font-size-xxxl: 40px;
-
+  --font-size-xxxl: 40px;
 
   --font-family: "Montserrat", sans-serif;
   --font-optical-sizing: auto;
@@ -124,7 +123,6 @@ header {
   justify-content: flex-start; /* keep text near the top */
   padding-top: clamp(12px, 4vw, 32px); /* spacing from top */
 }
-
 
 .banner h1 {
   margin: 0;
@@ -603,4 +601,19 @@ lens-catalogue::part(lens-add-to-query-button):hover {
 lens-catalogue::part(lens-data-tree-add-all-options-button) {
   color: white;
   background-color: var(--cyan);
+}
+
+.login-button {
+  padding: var(--gap-xs) var(--gap-s);
+  background-color: var(--cyan);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: var(--font-size-m);
+  position: relative;
+  text-decoration: none; /* removes underline */
+  color: white;
+  text-align: center;
+  width: 100%;
 }
