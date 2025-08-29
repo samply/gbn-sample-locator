@@ -99,15 +99,20 @@ header {
 
 /* Container holds the image and the overlay */
 .banner {
-  position: relative; /* ⬅️ lets us absolutely-position the overlay */
-  margin: 2rem auto; /* center on the page */
-  width: fit-content; /* shrink-wrap to the image width */
-  overflow: hidden; /* make overlay respect the rounding */
+  position: relative;
+  /* ⬅️ lets us absolutely-position the overlay */
+  margin: 2rem auto;
+  /* center on the page */
+  width: fit-content;
+  /* shrink-wrap to the image width */
+  overflow: hidden;
+  /* make overlay respect the rounding */
 }
 
 /* Make the image fill the container width cleanly */
 .banner-img {
-  display: block; /* removes baseline gap below images */
+  display: block;
+  /* removes baseline gap below images */
   width: 100%;
   height: auto;
 }
@@ -115,25 +120,58 @@ header {
 /* Full-cover semi-transparent layer + top-centered text */
 .overlay {
   position: absolute;
-  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  inset: 0;
+  /* top:0 right:0 bottom:0 left:0 */
   color: #485156;
   display: flex;
   flex-direction: column;
-  align-items: center; /* center horizontally */
-  justify-content: flex-start; /* keep text near the top */
-  padding-top: clamp(12px, 4vw, 32px); /* spacing from top */
+  align-items: center;
+  /* center horizontally */
+  justify-content: flex-start;
+  /* keep text near the top */
+  padding-top: clamp(12px, 4vw, 32px);
+  /* spacing from top */
+  background-color: rgba(255, 255, 255, 0.45);
 }
 
-.banner h1 {
-  margin: 0;
-  font-size: var(--font-size-xxxl);
-  font-weight: bold;
+
+  .banner h1 {
+    margin: 0;
+    font-size: var(--font-size-xxxl);
+    font-weight: bold;
+    position: absolute;
+    top: 35%
+  }
+
+  .banner h2 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    position: absolute;
+    top: 53%;
+    line-height: 40px;
+  }
+
+@media screen and (min-width: 1024px) {
+
+  .banner h1 {
+    margin: 0;
+    font-size: var(--font-size-xxxl);
+    font-weight: bold;
+    position: absolute;
+    top: 35%
+  }
+
+  .banner h2 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    position: absolute;
+    top: 53%;
+    line-height: 40px;
+  }
 }
-.banner h2 {
-  margin: 0;
-  font-size: var(--font-size-xxl);
-  font-weight: bold;
-}
+
 
 .search-wrapper {
   padding: var(--gap-m) 0;
@@ -237,6 +275,8 @@ lens-search-bar-multiple {
   font-weight: 400;
   color: var(--dark-gray);
 }
+
+
 
 .charts {
   display: block;
@@ -404,6 +444,10 @@ lens-search-bar-multiple::part(lens-searchbar-chip) {
   padding: var(--gap-xxs) var(--gap-xs);
 }
 
+lens-search-bar-multiple::part(lens-query-delete-button) {
+  color: rgb(234, 81, 103)
+}
+
 lens-search-bar-multiple::part(query-delete-button-item) {
   border-color: var(--white);
 }
@@ -422,7 +466,8 @@ lens-search-bar-multiple::part(query-delete-button-value) {
 }
 
 lens-search-bar-multiple::part(query-delete-button-value):hover {
-  color: #ff5167;
+  /* color: #ff5167; */
+  color: rgb(234, 81, 103);
 }
 
 lens-search-button {
@@ -486,8 +531,7 @@ lens-catalogue::part(data-tree-element-toggle-icon) {
   transform: rotate(0deg);
   left: -13px;
   top: -4px;
-  filter: invert(29%) sepia(17%) saturate(327%) hue-rotate(163deg)
-    brightness(92%) contrast(85%);
+  filter: invert(29%) sepia(17%) saturate(327%) hue-rotate(163deg) brightness(92%) contrast(85%);
 }
 
 lens-catalogue::part(data-tree-element-toggle-icon-open) {
@@ -495,8 +539,7 @@ lens-catalogue::part(data-tree-element-toggle-icon-open) {
 }
 
 lens-catalogue::part(query-add-button-icon) {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(213deg)
-    brightness(100%) contrast(100%);
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(213deg) brightness(100%) contrast(100%);
   width: 21px;
 }
 
@@ -537,6 +580,7 @@ lens-search-button::part(lens-search-button) {
   text-align: center;
   font-size: 10px;
 }
+
 .rect {
   height: 100%;
   width: 10%;
@@ -546,15 +590,19 @@ lens-search-button::part(lens-search-button) {
   background-color: var(--color);
   animation: stretch var(--duration) ease-in-out infinite;
 }
+
 .pause-animation {
   animation-play-state: paused;
 }
+
 @keyframes stretch {
+
   0%,
   40%,
   100% {
     transform: scaleY(0.4);
   }
+
   20% {
     transform: scaleY(1);
   }
@@ -612,8 +660,9 @@ lens-catalogue::part(lens-data-tree-add-all-options-button) {
   cursor: pointer;
   font-size: var(--font-size-m);
   position: relative;
-  text-decoration: none; /* removes underline */
+  text-decoration: none;
+  /* removes underline */
   color: white;
   text-align: center;
-  width: 100%;
+  margin: auto;
 }
