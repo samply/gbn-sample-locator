@@ -129,12 +129,12 @@
   }
 
   .logo-gbn {
-    height: 120px;
+    height: 100px;
   }
 
   .logo-bbmri {
     margin-top: 18px;
-    height: 93px;
+    height: 70px;
   }
 
   .logo-bmftr {

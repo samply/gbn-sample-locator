@@ -33,7 +33,7 @@
   import optionsPub from "../config/options.pub.json";
   import optionsProd from "../config/options.prod.json";
   import catalogue from "../catalogues/gbn.json";
-    import { redirectWithQuery } from "../function";
+  import { redirectWithQuery } from "../function";
 
   let catalogueopen = $state(false);
 
@@ -168,7 +168,9 @@
         <div>Search has been modified!</div>
       </lens-search-modified-display>
       {#if env.PUBLIC_ENVIRONMENT === "pub"}
-      <button class="login-button" onclick={redirectWithQuery}> LOGIN FOR DETAILED RESULTS  </button>
+        <button class="login-button" onclick={redirectWithQuery}>
+          LOGIN FOR DETAILED RESULTS
+        </button>
       {/if}
     </div>
 
@@ -221,3 +223,57 @@
 </main>
 
 <error-toasts></error-toasts>
+
+<style>
+  main {
+    padding: var(--gap-s);
+  }
+
+  .search-wrapper {
+    padding: var(--gap-m) 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .search-wrapper {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+      z-index: 1;
+      padding: var(--gap-m) 0;
+      background-color: var(--white);
+    }
+  }
+
+  .search {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: var(--gap-s);
+    padding: var(--gap-xs);
+    border-radius: var(--border-radius-small);
+    background-color: #dadcdd;
+    justify-content: end;
+  }
+
+  .search-bar-wrapper {
+    grid-column: 1/-1;
+  }
+
+  lens-search-bar-multiple {
+    grid-column: 1/-1;
+  }
+
+  @media screen and (min-width: 768px) {
+    .search {
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      padding: var(--gap-m);
+    }
+
+    .search-bar-wrapper {
+      grid-column: 1/2;
+    }
+
+    lens-search-bar-multiple {
+      grid-column: 1/2;
+    }
+  }
+</style>

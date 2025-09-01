@@ -58,6 +58,7 @@
 body {
   margin: 0px;
   font-family: var(--font-family);
+  width: 100vw;
 }
 
 button {
@@ -66,35 +67,8 @@ button {
 
 header {
   background-color: var(--white);
-  padding: var(--gap-xs);
   border-bottom: solid 1px var(--light-gray);
   display: grid;
-}
-
-.menu {
-  text-align: center;
-  margin-bottom: 0;
-  margin-top: var(--gap-l);
-  padding-inline-start: 0;
-}
-
-.menu a {
-  color: var(--dark-gray);
-  text-decoration: none;
-  padding-left: var(--gap-xs);
-  padding-right: var(--gap-xs);
-}
-
-@media screen and (min-width: 768px) {
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-  }
-
-  .menu {
-    margin-top: 0;
-  }
 }
 
 /* Container holds the image and the overlay */
@@ -135,82 +109,36 @@ header {
 }
 
 
+.banner h1 {
+  margin: 0;
+  font-size: 7vw;
+  font-weight: bold;
+  position: absolute;
+  top: 35%
+}
+
+.banner h2 {
+  margin: 0;
+  font-size: 3vw;
+  font-weight: bold;
+  position: absolute;
+  top: 65%;
+}
+
+@media screen and (min-width: 425px) {
+
   .banner h1 {
-    margin: 0;
-    font-size: var(--font-size-xxxl);
-    font-weight: bold;
-    position: absolute;
+    font-size: var(--font-size-xxl);
     top: 35%
   }
 
   .banner h2 {
-    margin: 0;
-    font-size: var(--font-size-xl);
-    font-weight: bold;
-    position: absolute;
-    top: 53%;
-    line-height: 40px;
+    font-size: var(--font-size-s);
+    top: 65%;
   }
 
-@media screen and (min-width: 1024px) {
-
-  .banner h1 {
-    margin: 0;
-    font-size: var(--font-size-xxxl);
-    font-weight: bold;
-    position: absolute;
-    top: 35%
-  }
-
-  .banner h2 {
-    margin: 0;
-    font-size: var(--font-size-xl);
-    font-weight: bold;
-    position: absolute;
-    top: 53%;
-    line-height: 40px;
-  }
 }
 
-
-.search-wrapper {
-  padding: var(--gap-m) 0;
-}
-
-@media screen and (min-width: 1024px) {
-  .search-wrapper {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 1;
-    padding: var(--gap-m) 0;
-    background-color: var(--white);
-  }
-}
-
-.search {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: var(--gap-s);
-  padding: var(--gap-m);
-  border-radius: var(--border-radius-small);
-  background-color: #dadcdd;
-  justify-content: end;
-}
-
-lens-search-bar-multiple {
-  grid-column: 1/-1;
-}
-
-@media screen and (min-width: 768px) {
-  .search {
-    grid-template-columns: minmax(0, 1fr) auto auto;
-  }
-
-  lens-search-bar-multiple {
-    grid-column: 1/2;
-  }
-}
 
 .grid {
   position: relative;
@@ -303,29 +231,39 @@ lens-search-bar-multiple {
   border: none;
 }
 
-lens-result-summary {
-  grid-template-columns: 1fr auto;
+lens-result-summary::part(lens-result-summary) {
   display: block;
 }
 
-lens-result-summary::part(result-summary-content) {
+lens-result-summary::part(lens-result-summary-content) {
   gap: var(--gap-l);
+  display: block;
 }
 
 .negotiate {
   margin: 0 50px;
 }
 
+@media screen and (min-width: 425px) {
+  lens-result-summary::part(lens-result-summary-content) {
+    gap: var(--gap-l);
+    display: flex;
+  }
+
+}
+
 @media screen and (min-width: 768px) {
   .chart-diagnosis {
     grid-column: 1/-1;
   }
+
+  lens-result-summary::part(lens-result-summary) {
+    display: flex;
+  }
+
 }
 
 @media screen and (min-width: 1024px) {
-  lens-result-summary {
-    display: grid;
-  }
 
   lens-result-summary::part(result-summary-header-title) {
     margin: 0;
@@ -351,48 +289,6 @@ lens-result-summary::part(result-summary-content) {
   .chart-diagnosis {
     grid-column: 1/-1;
   }
-}
-
-footer {
-  text-align: center;
-  display: grid;
-  grid-gap: var(--gap-m);
-  padding: var(--gap-xs);
-  border-top: solid 1px var(--light-gray);
-  margin-top: var(--gap-xxl);
-}
-
-footer img {
-  margin: auto;
-}
-
-@media screen and (min-width: 1024px) {
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-footer a {
-  color: var(--black);
-}
-
-footer a:hover {
-  color: var(--orange);
-}
-
-.made_with {
-  margin-top: 12px;
-  margin-right: 12px;
-}
-
-.made_with a {
-  margin-left: -8px;
-}
-
-.imprint {
-  border-right: none;
 }
 
 .result-table-hint-text {
