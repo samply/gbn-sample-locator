@@ -16,10 +16,19 @@
 </p>
 
 <div class="logos">
-  <img src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg" height="100px" alt="gbn logo" />
-  <img src="BBMRI-ERIC-gateway-for-health.svg" height="75px" alt="bbmri-eric logo" />
   <img
-    src="BMFTR_en_DTP_CMYK_gef_durch.jpg" height="110px"
+    src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg"
+    class="logo-gbn"
+    alt="gbn logo"
+  />
+  <img
+    class="logo-bbmri"
+    src="BBMRI-ERIC-gateway-for-health.svg"
+    alt="bbmri-eric logo"
+  />
+  <img
+    class="logo-bmftr"
+    src="BMFTR_en_DTP_CMYK_gef_durch.jpg"
     alt="sponsored by the federal ministry of research logo"
   />
 </div>
@@ -89,18 +98,98 @@
     padding: 0;
   }
 
-  ul li {
-    margin-bottom: 1rem;
+  li {
+    padding-bottom: 0px;
+  }
+
+  li a {
+    padding: 0px;
   }
 
   .logos {
     display: grid;
-    grid-template-columns: 33% 33% 20%;
-    grid-gap: 10%;
-    justify-content: space-between;
-    align-items: center;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-gap: 5%;
     margin: 3rem auto;
+    /* height: 125px; */
+    padding: 0;
+    justify-content: center;
+    align-items: center;
   }
+
+  .logo-gbn,
+  .logo-bbmri,
+  .logo-bmftr {
+    padding: 0;
+    position: relative;
+  }
+
+  .logos img {
+    padding: 0;
+  }
+
+  .logo-gbn {
+    height: 100px;
+  }
+
+  .logo-bbmri {
+    margin-top: 18px;
+    height: 70px;
+  }
+
+  .logo-bmftr {
+    height: 125px;
+  }
+  @media (min-width: 768px) {
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 5%;
+      margin: 3rem auto;
+      height: 90px;
+      padding: 0 8px 0 5px;
+    }
+
+    .logo-gbn {
+      height: 86px;
+    }
+
+    .logo-bbmri {
+      margin-top: 18px;
+      height: 67px;
+    }
+
+    .logo-bmftr {
+      height: 90px;
+      margin-right: -16px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 5%;
+      margin: 3rem auto;
+      height: 125px;
+      padding: 0;
+    }
+
+    .logo-gbn {
+      height: 120px;
+    }
+
+    .logo-bbmri {
+      margin-top: 18px;
+      height: 93px;
+    }
+
+    .logo-bmftr {
+      height: 125px;
+      margin-right: -16px;
+    }
+  }
+
   p {
     text-align: justify;
   }

@@ -7,49 +7,54 @@
   let logoutUrl = `/oauth2/sign_out?rd=${window.location.protocol}%2F%2F${window.location.hostname}%2Flogout`;
 </script>
 
+<header>
+  <div>
+    <menu class="menu">
+      <a href="/"
+        ><img
+          src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg"
+          alt="German Biobank Node"
+        /></a
+      >
+      <div>
+        {#if env.PUBLIC_ENVIRONMENT === "pub"}
+          <button class="button-links" onclick={redirectWithQuery}>
+            LOGIN
+          </button>
+        {/if}
+        {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
+          <a href={logoutUrl}>LOGOUT</a>
+        {/if}
+        <a class="links" href="/about">About</a>
+        <a class="links" href="/contact">Contact</a>
+      </div>
+    </menu>
+  </div>
+  <div class="divider"></div>
+</header>
 <div class="container">
-  <header>
-    <div>
-      <menu class="menu">
-        <a href="/"
-          ><img
-            src="GBN-LOGO-POS-EN-RGB_Schutzzone.svg"
-            alt="German Biobank Node"
-            height="121px"
-          /></a
-        >
-        <div class="top-space">
-          {#if env.PUBLIC_ENVIRONMENT === "pub"}
-            <button class="button-links" onclick={redirectWithQuery}>
-              LOGIN
-            </button>
-          {/if}
-          {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
-            <a href={logoutUrl}>LOGOUT</a>
-          {/if}
-          <a class="links" href="/about">About</a>
-          <a class="links" href="/contact">Contact</a>
-        </div>
-      </menu>
-    </div>
-    <div class="divider"></div>
-  </header>
   {@render children()}
-  <footer class="footer-container">
-    <div>
-      <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
-    </div>
-    <div>
-      Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.
-    </div>
-    <img
-      src="german-cancer-research-center-dkfz-logo-vector.svg"
-      alt="German Cancer Research Center"
-      height="40"
-    />
-    <img src="BMFTR_en_DTP_CMYK_gef_durch.jpg" alt="EU" height="120px" />
-  </footer>
 </div>
+<footer class="footer-container">
+  <div class="privacy-policy">
+    <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
+  </div>
+  <div class="made-with">
+    Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.
+  </div>
+  <img
+    class="logo-dkfz"
+    src="german-cancer-research-center-dkfz-logo-vector.svg"
+    alt="German Cancer Research Center"
+    height="40"
+  />
+  <img
+    class="logo-eu"
+    src="BMFTR_en_DTP_CMYK_gef_durch.jpg"
+    alt="EU"
+    height="120px"
+  />
+</footer>
 
 <style>
   /* Selects the app root */
@@ -66,8 +71,22 @@
   }
 
   .menu {
+    text-align: center;
+    margin: 0;
+    padding-inline-start: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .menu a {
+    color: var(--dark-gray);
+    text-decoration: none;
+  }
+
+  .menu img {
+    height: 90px;
   }
 
   .menu a {
@@ -81,27 +100,12 @@
     color: #6f8795;
   }
 
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 2rem;
-
-    flex-direction: row;
-    gap: 3rem;
-  }
-
-  footer a {
-    color: var(--color-gray);
-    cursor: pointer;
-  }
-
   .menu .links {
     text-decoration: none;
     cursor: pointer;
-    margin-left: 45px;
     font-size: 21px;
     letter-spacing: 1px;
+    margin: 0 var(--gap-s);
   }
 
   .button-links {
@@ -116,39 +120,85 @@
     letter-spacing: 1px;
   }
 
-  .container {
-    margin: 0 auto;
-  }
-
-  @media (min-width: 576px) {
-    .container {
-      width: 540px;
+  @media (min-width: 622px) {
+    .menu {
+      display: flex;
+      justify-content: space-between;
     }
+    
   }
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 0px 32px;
+    }
+
     .container {
       width: 720px;
+      margin: auto;
     }
-  }
-
-  .top-space {
-    margin-top: 40px;
   }
 
   @media (min-width: 1200px) {
     .container {
       width: 1140px;
+      padding: 10px 84px;
+    }
+    .menu img {
+      height: 121px;
     }
   }
 
-  .container {
+  /* .container {
     margin: 0 var(--gap-s);
-  }
+  } */
 
   @media screen and (min-width: 1024px) {
     .container {
       margin: 0 auto;
     }
+  }
+
+  footer {
+    text-align: center;
+    display: grid;
+    grid-gap: var(--gap-m);
+    border-top: solid 1px var(--light-gray);
+    margin-top: var(--gap-xxl);
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--gap-m);
+  }
+
+  .logo-eu {
+    justify-self: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    footer {
+      grid-template-columns: repeat(4, 1fr);
+      text-align: left;
+      justify-content: center;
+      text-align: center;
+    }
+    .privacy-policy {
+      margin-left: 8px;
+    }
+    .made-with {
+      margin-left: 18px;
+    }
+
+  }
+
+  footer a {
+    color: var(--color-gray);
+    cursor: pointer;
+  }
+
+  footer a:hover {
+    color: var(--orange);
   }
 </style>
