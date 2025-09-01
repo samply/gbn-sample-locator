@@ -1,5 +1,6 @@
 <script>
   import { env } from "$env/dynamic/public";
+  import { base } from "$app/paths";
 
   let { children } = $props();
   import { redirectWithQuery } from "../function";
@@ -25,8 +26,8 @@
         {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
           <a href={logoutUrl}>LOGOUT</a>
         {/if}
-        <a class="links" href="/about">About</a>
-        <a class="links" href="/contact">Contact</a>
+        <a class="links" href="{base}/about">About</a>
+        <a class="links" href="{base}/contact">Contact</a>
       </div>
     </menu>
   </div>
@@ -125,7 +126,6 @@
       display: flex;
       justify-content: space-between;
     }
-    
   }
 
   @media screen and (min-width: 768px) {
@@ -190,7 +190,6 @@
     .made-with {
       margin-left: 18px;
     }
-
   }
 
   footer a {
