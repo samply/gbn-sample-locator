@@ -361,6 +361,10 @@ lens-search-bar-multiple::part(query-delete-button-value) {
   margin: 0 var(--gap-xxs) 0 0;
 }
 
+lens-negotiate-button::part(lens-negotiate-button-active) {
+    background-color: var(--cyan);
+}
+
 lens-search-bar-multiple::part(query-delete-button-value):hover {
   /* color: #ff5167; */
   color: rgb(234, 81, 103);
