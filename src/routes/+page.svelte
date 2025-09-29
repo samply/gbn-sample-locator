@@ -48,10 +48,14 @@
     abortController = new AbortController();
     clearSiteResults();
 
-    const query = btoa(
+    /** Helper function to base64 encode a UTF-8 string */
+    const base64Encode = (utf8String: string) =>
+        btoa(String.fromCharCode(...new TextEncoder().encode(utf8String)));
+
+    const query = base64Encode(
       JSON.stringify({
         lang: "ast",
-        payload: btoa(JSON.stringify({ ast, id: uuidv4() })),
+        payload: base64Encode(JSON.stringify({ ast, id: uuidv4() })),
       }),
     );
     querySpot(query, abortController.signal, (result: SpotResult) => {
