@@ -170,9 +170,7 @@
           </div></lens-result-table
         >
       {/if}
-      <lens-search-modified-display>
-        <div>Search has been modified!</div>
-      </lens-search-modified-display>
+      <lens-search-modified-display></lens-search-modified-display>
       {#if env.PUBLIC_ENVIRONMENT === "pub"}
         <button class="login-button" onclick={redirectWithQuery}>
           LOGIN FOR DETAILED RESULTS
