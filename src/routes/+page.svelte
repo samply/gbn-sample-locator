@@ -61,6 +61,7 @@
         const siteResult = JSON.parse(atob(result.body));
         setSiteResult(site, siteResult);
       } else {
+        hideFailedSite(site);
         console.error(
           `Site ${site} failed with status ${result.status}:`,
           result.body,
@@ -157,7 +158,7 @@
     </div>
     <div class="chart-wrapper result-table">
       {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
-        <lens-result-table pageSize={50} pageSizeSwitcher={true}>
+        <lens-result-table>
           <div slot="beneath-pagination">
             <lens-negotiate-button class="negotiate" type="Negotiator"
             ></lens-negotiate-button>
@@ -222,7 +223,7 @@
   </div>
 </main>
 
-<error-toasts></error-toasts>
+<lens-toast></lens-toast>
 
 <style>
   main {
