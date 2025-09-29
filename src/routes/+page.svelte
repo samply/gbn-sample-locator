@@ -24,6 +24,7 @@
     clearSiteResults,
     getAst,
     querySpot,
+    hideFailedSite,
   } from "@samply/lens";
   import { onMount } from "svelte";
   import { env } from "$env/dynamic/public";
