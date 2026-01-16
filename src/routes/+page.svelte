@@ -24,7 +24,7 @@
     clearSiteResults,
     getAst,
     querySpot,
-    hideFailedSite,
+    removeFailedSite,
   } from "@samply/lens";
   import { onMount } from "svelte";
   import { env } from "$env/dynamic/public";
@@ -66,7 +66,7 @@
         const siteResult = JSON.parse(atob(result.body));
         setSiteResult(site, siteResult);
       } else {
-        hideFailedSite(site);
+        removeFailedSite(site);
         console.error(
           `Site ${site} failed with status ${result.status}:`,
           result.body,
@@ -146,7 +146,7 @@
         message={[
           `The queries are patient-centered: The patients are selected first and then the samples of these patients`,
         ]}
-        buttonSize="18px"
+        buttonSize={18}
       ></lens-info-button>
     </div>
   </div>
