@@ -32,7 +32,7 @@
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
-		"@samply/lens": "^0.6.4",
+		"@samply/lens": "^0.6.6",
 		"@sveltejs/adapter-node": "^5.5.1"
 	}
 }
