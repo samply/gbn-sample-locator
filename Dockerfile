@@ -6,7 +6,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 # Copy the rest of the application
-COPY vite.config.ts svelte.config.js ./
+COPY vite.config.ts ./
 COPY src ./src
 COPY static ./static
 ARG SVELTE_CONFIG="base"

@@ -1,11 +1,15 @@
 <script>
-  import { env } from "$env/dynamic/public";
-  import { base } from "$app/paths";
+  import * as env from "$app/env/public";
+  import { resolve } from "$app/paths";
+  import "../app.css";
+  import "@samply/lens";
 
   let { children } = $props();
   import { redirectWithQuery } from "../function";
 
-  let logoutUrl = `/oauth2/sign_out?rd=${window.location.protocol}%2F%2F${window.location.hostname}%2Flogout`;
+  // Clear the oauth2-proxy session, then end the Life Science AAI session too,
+  // otherwise the next request silently logs the user back in.
+  const logoutUrl = `/oauth2/sign_out?rd=${encodeURIComponent("https://login.aai.lifescience-ri.eu/oidc/endsession")}`;
 </script>
 
 <header>
@@ -24,10 +28,10 @@
           </button>
         {/if}
         {#if env.PUBLIC_ENVIRONMENT === "test" || env.PUBLIC_ENVIRONMENT === "prod"}
-          <a href={logoutUrl}>LOGOUT</a>
+          <a class="links" href={logoutUrl}>LOGOUT</a>
         {/if}
-        <a class="links" href="{base}/about">About</a>
-        <a class="links" href="{base}/contact">Contact</a>
+        <a class="links" href={resolve("/about")}>About</a>
+        <a class="links" href={resolve("/contact")}>Contact</a>
       </div>
     </menu>
   </div>
@@ -40,9 +44,7 @@
   <div class="privacy-policy">
     <a href="https://www.bbmri-eric.eu/privacy-notice/">Privacy Policy</a>
   </div>
-  <div class="made-with">
-    Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.
-  </div>
+  <lens-about></lens-about>
   <img
     class="logo-dkfz"
     src="german-cancer-research-center-dkfz-logo-vector.svg"
@@ -187,7 +189,7 @@
     .privacy-policy {
       margin-left: 8px;
     }
-    .made-with {
+    lens-about {
       margin-left: 18px;
     }
   }
