@@ -27,8 +27,23 @@ jobs:
         with:
             # The Docker Hub Repository you want eventually push to, e.g samply/share-client
             image-name: "samply/gbn-sample-locator"
-            # Where to push your images ("dockerhub", "ghcr", "both" or "none")
-            push-to: dockerhub
+            ghcr-retention-policy: keep
+        # This passes the secrets from calling workflow to the called workflow
+        secrets:
+            DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+    build_pub:
+        # This workflow defines how a samply docker image is built, tested and published.
+        # Visit: https://github.com/samply/github-workflows/blob/main/.github/workflows/docker-ci.yml, for more information
+        uses: samply/github-workflows/.github/workflows/docker-ci.yml@main
+        with:
+            # The Docker Hub Repository you want eventually push to, e.g samply/share-client
+            image-name: "samply/gbn-sample-locator"
+            ghcr-retention-policy: keep
+            build-args: |
+                SVELTE_CONFIG=pub
+            #
+            image-tag-suffix: "-pub"
         # This passes the secrets from calling workflow to the called workflow
         secrets:
             DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
