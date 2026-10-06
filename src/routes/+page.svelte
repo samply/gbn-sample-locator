@@ -9,7 +9,6 @@
     });
   }
 
-  import "../app.css";
   import type {
     LensOptions,
     Catalogue,
@@ -27,7 +26,7 @@
     removeFailedSite,
   } from "@samply/lens";
   import { onMount } from "svelte";
-  import { env } from "$env/dynamic/public";
+  import * as env from "$app/env/public";
 
   import { v4 as uuidv4 } from "uuid";
   import optionsTest from "../config/options.test.json";
@@ -81,7 +80,7 @@
 
   onMount(() => {
     // Set the options based on the environment
-    let options: LensOptions = optionsTest;
+    let options: LensOptions;
 
     switch (env.PUBLIC_ENVIRONMENT) {
       case "prod":
