@@ -20,7 +20,7 @@
         "mainz": "Mainz",
         "muenchen-mpi-test": "München MPI-Test",
         "erlangen": "Erlangen",
-        "muenster": "Münster",
+        "muenster-zbb-mfm": "Münster-ZBB-MFM",
         "marburg": "Marburg",
         "regensburg": "Regensburg",
         "wuerzburg": "Würzburg"
@@ -194,10 +194,10 @@
                 "collection_name": "Main Collectiion CBBMR"
             },
             {
-                "site": "Münster",
-                "site_id": "bbmri-eric:ID:DE_CBBMR",
-                "collection": "bbmri-eric:ID:DE_CBBMR:collection:main",
-                "collection_name": "Main Collectiion CBBMR"
+                "site": "Münster-ZBB-MFM",
+                "site_id": "bbmri-eric:ID:DE_ZBBMFM",
+	        "collection": "bbmri-eric:ID:DE_ZBBMFM:collection:zbb-mfm-full",
+                "collection_name": "Full Collectiion ZBB MFM"
             },
             {
                 "site": "Regensburg",
