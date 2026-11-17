@@ -21,7 +21,6 @@
         "muenchen-mpi-test": "München MPI-Test",
         "muenster-zbb-mfm": "Münster-ZBB-MFM",
         "erlangen": "Erlangen",
-        "muenster": "Münster",
         "marburg": "Marburg",
         "regensburg": "Regensburg",
         "wuerzburg": "Würzburg"
@@ -190,12 +189,6 @@
             },
             {
                 "site": "Marburg",
-                "site_id": "bbmri-eric:ID:DE_CBBMR",
-                "collection": "bbmri-eric:ID:DE_CBBMR:collection:main",
-                "collection_name": "Main Collectiion CBBMR"
-            },
-            {
-                "site": "Münster",
                 "site_id": "bbmri-eric:ID:DE_CBBMR",
                 "collection": "bbmri-eric:ID:DE_CBBMR:collection:main",
                 "collection_name": "Main Collectiion CBBMR"
